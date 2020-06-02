@@ -9,9 +9,8 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.hqyj</groupId>
-	<artifactId>SpringBootDemo</artifactId>
+	<artifactId>SpringBootDemo2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<!-- <packaging>war</packaging> -->
 	<name>SpringBootDemo200301</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -20,25 +19,16 @@
 	</properties>
 
 	<dependencies>
-		<!-- spring web -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<!-- test -->
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
-		<!-- 解决jar包打包时与tomcat中的冲突 -->
-<!-- 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<scope>provided</scope>
-		</dependency> -->
-		
 	</dependencies>
 
 	<build>
@@ -50,5 +40,4 @@
 		</plugins>
 	</build>
 
-	
 </project>
