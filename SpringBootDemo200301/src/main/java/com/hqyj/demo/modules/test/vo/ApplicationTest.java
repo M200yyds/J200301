@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "com.test")
 public class ApplicationTest {
 
-
+	
 	private String name;
 	private String random;
 	private String desc;

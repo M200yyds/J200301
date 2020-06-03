@@ -1,5 +1,7 @@
 package com.hqyj.demo.modules.test.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -28,6 +30,23 @@ public class TestController {
 	
 	@Autowired
 	private ApplicationTest applicationtest;
+	
+	private final static Logger LOGGER = LoggerFactory.getLogger(TestController.class);
+	
+	
+	@RequestMapping("/test/log")
+	@ResponseBody
+	public String logInfo() {
+		//trace<debug<info<warn<error
+		LOGGER.trace("This is trace log");
+		LOGGER.debug("This is debug log");
+		LOGGER.info("This is info log");
+		LOGGER.warn("This is warn log");
+		LOGGER.error("This is error log");
+		return "This is log test";
+	}
+	
+	
 	
 	@RequestMapping("/test/config")
 	@ResponseBody
