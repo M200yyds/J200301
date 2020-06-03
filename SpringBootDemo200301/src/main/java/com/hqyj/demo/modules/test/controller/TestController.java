@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.hqyj.demo.modules.test.vo.ApplicationTest;
 
 @Controller
+@RequestMapping("/test")
 public class TestController {
 	
 	/**
@@ -34,7 +35,7 @@ public class TestController {
 	private final static Logger LOGGER = LoggerFactory.getLogger(TestController.class);
 	
 	
-	@RequestMapping("/test/log")
+	@RequestMapping("/log")
 	@ResponseBody
 	public String logInfo() {
 		//trace<debug<info<warn<error
@@ -48,7 +49,7 @@ public class TestController {
 	
 	
 	
-	@RequestMapping("/test/config")
+	@RequestMapping("/config")
 	@ResponseBody
 	public String configInfo() {
 		StringBuffer sb = new StringBuffer();
@@ -63,7 +64,7 @@ public class TestController {
 	 * 测试
 	 * 
 	 */
-	@RequestMapping("/test/desc")
+	@RequestMapping("/desc")
 	@ResponseBody
 	public String testDesc() {
 		return "This is test modules desc";
