@@ -49,7 +49,6 @@
             </timeBasedFileNamingAndTriggeringPolicy>
         </rollingPolicy>
     </appender>
-
     <!-- 指定jar包输出日志级别，additivity: false，不会打印两次 -->
     <Logger name="org.springframework" level="DEBUG" additivity="false">
     	<appender-ref ref="console"/>
