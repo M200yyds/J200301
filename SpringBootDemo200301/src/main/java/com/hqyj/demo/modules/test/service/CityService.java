@@ -3,6 +3,7 @@ package com.hqyj.demo.modules.test.service;
 import java.util.List;
 
 import com.github.pagehelper.PageInfo;
+import com.hqyj.demo.modules.common.vo.SearchVo;
 import com.hqyj.demo.modules.test.entity.City;
 
 public interface CityService {
@@ -11,4 +12,6 @@ public interface CityService {
 	public City getCityByName(String cityName,String localCityName);
 	
 	public PageInfo<City> getCitiesByPage(Integer currentPage,Integer pageSize,Integer countryId);
+	//封装
+	public PageInfo<City> getCitiesBySearchVo(SearchVo searchVo);
 }

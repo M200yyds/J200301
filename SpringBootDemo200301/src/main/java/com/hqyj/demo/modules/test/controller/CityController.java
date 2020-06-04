@@ -4,11 +4,15 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.github.pagehelper.PageInfo;
+import com.hqyj.demo.modules.common.vo.SearchVo;
 import com.hqyj.demo.modules.test.entity.City;
 import com.hqyj.demo.modules.test.service.CityService;
 
@@ -49,6 +53,14 @@ public class CityController {
 		
 		return cityService.getCitiesByPage(currentPage, pageSize,countryId);
 		
+	}
+	/**
+	 * 127.0.0.1/api/cities
+	 */
+	//@RequestMapping(value = "/cities", method = RequestMethod.POST, consumes = "apllication/json") 防止url冗长。        语句可简化为下面的注解
+	@PostMapping(value = "/cities",consumes = "application/json")
+	public PageInfo<City> getCitiesBySearchVo(@RequestBody SearchVo searchVo){
+		return cityService.getCitiesBySearchVo(searchVo);
 	}
 	
 }
