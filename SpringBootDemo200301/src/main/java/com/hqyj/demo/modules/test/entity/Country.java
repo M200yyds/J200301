@@ -8,7 +8,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class Country {
-	private int countryId;
+	private Integer countryId;
 	private String countryName;
 	private String localCountryName;
 	private String countryCode;
@@ -16,16 +16,16 @@ public class Country {
 	private String continent;
 	private String region;
 	private float surfaceArea;
-	private int indepYear;
-	private int population;
+	private Integer indepYear;
+	private Integer population;
 	private float lifeExpectancy;
 	private float gnp;
 	private String governmentForm;
 	private String headOfState;
-	private int capital;
+	private Integer capital;
 	private String timeZone;
-	private int languageId;
-	private int currencyId;
+	private Integer languageId;
+	private Integer currencyId;
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dateModified;
@@ -35,11 +35,11 @@ public class Country {
 
 	private List<City> cities;
 
-	public int getCountryId() {
+	public Integer getCountryId() {
 		return countryId;
 	}
 
-	public void setCountryId(int countryId) {
+	public void setCountryId(Integer countryId) {
 		this.countryId = countryId;
 	}
 
@@ -99,19 +99,19 @@ public class Country {
 		this.surfaceArea = surfaceArea;
 	}
 
-	public int getIndepYear() {
+	public Integer getIndepYear() {
 		return indepYear;
 	}
 
-	public void setIndepYear(int indepYear) {
+	public void setIndepYear(Integer indepYear) {
 		this.indepYear = indepYear;
 	}
 
-	public int getPopulation() {
+	public Integer getPopulation() {
 		return population;
 	}
 
-	public void setPopulation(int population) {
+	public void setPopulation(Integer population) {
 		this.population = population;
 	}
 
@@ -147,11 +147,11 @@ public class Country {
 		this.headOfState = headOfState;
 	}
 
-	public int getCapital() {
+	public Integer getCapital() {
 		return capital;
 	}
 
-	public void setCapital(int capital) {
+	public void setCapital(Integer capital) {
 		this.capital = capital;
 	}
 
@@ -163,19 +163,19 @@ public class Country {
 		this.timeZone = timeZone;
 	}
 
-	public int getLanguageId() {
+	public Integer getLanguageId() {
 		return languageId;
 	}
 
-	public void setLanguageId(int languageId) {
+	public void setLanguageId(Integer languageId) {
 		this.languageId = languageId;
 	}
 
-	public int getCurrencyId() {
+	public Integer getCurrencyId() {
 		return currencyId;
 	}
 
-	public void setCurrencyId(int currencyId) {
+	public void setCurrencyId(Integer currencyId) {
 		this.currencyId = currencyId;
 	}
 
