@@ -18,4 +18,5 @@ public interface CityService {
 	public Result<City> insertCity(City city);
 	public Result<City> updateCity(City city);
 	public Result<Object> deleteCity(Integer cityId);
+	Object migrateCitiesByCountryId(Integer countryId);
 }

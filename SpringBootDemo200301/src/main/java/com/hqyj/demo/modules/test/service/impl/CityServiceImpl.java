@@ -16,6 +16,7 @@ import com.hqyj.demo.modules.common.vo.SearchVo;
 import com.hqyj.demo.modules.test.dao.CityDao;
 import com.hqyj.demo.modules.test.entity.City;
 import com.hqyj.demo.modules.test.service.CityService;
+import com.hqyj.demo.utils.RedisUtils;
 
 @Service
 public class CityServiceImpl implements CityService{
@@ -23,6 +24,8 @@ public class CityServiceImpl implements CityService{
 	@Autowired
 	private CityDao cityDao;
 	
+	@Autowired
+	private RedisUtils redisutils;
 	public List<City> getCitiesByCountryId(Integer countryId) {
 		return Optional.ofNullable(cityDao.getCitiesByCountryId(countryId))
 						.orElse(Collections.emptyList());
@@ -78,6 +81,14 @@ public class CityServiceImpl implements CityService{
 	public Result<Object> deleteCity(Integer cityId) {
 		cityDao.deleteCity(cityId);
 		return new Result<Object>(ResultStatus.SUCCESS.status,"delete success");
+	}
+
+
+	@Override
+	public Object migrateCitiesByCountryId(Integer countryId) {
+		List<City> cities = getCitiesByCountryId2(countryId);
+		redisutils.set("cities", cities);
+		return redisutils.get("cities");
 	}
 
 
