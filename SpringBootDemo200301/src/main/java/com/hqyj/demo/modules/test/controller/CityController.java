@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.github.pagehelper.PageInfo;
+import com.hqyj.demo.modules.common.vo.Result;
 import com.hqyj.demo.modules.common.vo.SearchVo;
 import com.hqyj.demo.modules.test.entity.City;
 import com.hqyj.demo.modules.test.service.CityService;
@@ -63,4 +63,12 @@ public class CityController {
 		return cityService.getCitiesBySearchVo(searchVo);
 	}
 	
+	/**
+	 * 127.0.0.1/api/city post
+	 */
+	@PostMapping(value="/city",consumes = "application/json")
+	public Result<City> insertCity(@RequestBody City city){
+		
+		return cityService.insertCity(city);
+	}
 }
