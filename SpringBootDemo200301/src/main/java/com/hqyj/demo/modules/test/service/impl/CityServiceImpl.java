@@ -66,5 +66,20 @@ public class CityServiceImpl implements CityService{
 	}
 
 
+	@Override
+	public Result<City> updateCity(City city) {
+		cityDao.updateCity(city);
+		//int a= 5/0  ;
+		return new Result<City>(ResultStatus.SUCCESS.status,"update success",city);
+	}
+
+
+	@Override
+	public Result<Object> deleteCity(Integer cityId) {
+		cityDao.deleteCity(cityId);
+		return new Result<Object>(ResultStatus.SUCCESS.status,"delete success");
+	}
+
+
 
 }

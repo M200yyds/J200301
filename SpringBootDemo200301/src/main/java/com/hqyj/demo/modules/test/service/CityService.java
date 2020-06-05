@@ -16,4 +16,6 @@ public interface CityService {
 	//封装
 	public PageInfo<City> getCitiesBySearchVo(SearchVo searchVo);
 	public Result<City> insertCity(City city);
+	public Result<City> updateCity(City city);
+	public Result<Object> deleteCity(Integer cityId);
 }
