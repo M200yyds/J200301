@@ -25,10 +25,9 @@ public interface CountryDao {
 	 @Select("select * from m_country where country_id=#{countryId}")
 	 @Results(id="countryResult", value = {
 			 @Result(column = "country_id",property = "countryId"),
-			 @Result(column = "country_id",
-	 							property = "cities",
+			 @Result(column = "country_id",property = "cities",
 	 								javaType = List.class,
-	 									many = @Many(select = "com.hqyj.demo.modules.test.dao.cityDao.getCitiesByCountryId2"))})
+	 									many = @Many(select = "com.hqyj.demo.modules.test.dao.CityDao.getCitiesByCountryId2"))})
 	 public Country getCountryByCountryId(Integer countryId);
 	 
 	 
