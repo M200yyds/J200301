@@ -28,12 +28,13 @@ public class UrlInterceptor implements HandlerInterceptor{
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
 			ModelAndView modelAndView) throws Exception {
 		LOGGER.debug("**************post controller****************");
-		String path = request.getServletPath();
-		String template = (String) modelAndView.getModelMap().get("template");
+		
 		if(modelAndView == null || modelAndView.getViewName().startsWith("redirect")) {
 			return ;
 		}
 		
+		String path = request.getServletPath();
+		String template = (String) modelAndView.getModelMap().get("template");
 		if(StringUtils.isBlank(template)) {
 			if(path.startsWith("/")) {
 				path = path.substring(1);
