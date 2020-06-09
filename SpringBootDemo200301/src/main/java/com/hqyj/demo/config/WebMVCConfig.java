@@ -65,7 +65,6 @@ public class WebMVCConfig implements WebMvcConfigurer{
 			registry.addResourceHandler(resourceConfigBean.getResourcePath())
 				.addResourceLocations(ResourceUtils.FILE_URL_PREFIX+resourceConfigBean.getLocalPathForLinux());
 		}
-		
 	}
 	
 }
