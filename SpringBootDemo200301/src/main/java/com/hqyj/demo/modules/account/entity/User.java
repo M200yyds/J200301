@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int userId;
+	private Integer userId;
 	private String userName;
 	private String password;
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
@@ -28,11 +28,47 @@ public class User {
 	@Transient
 	private List<Role> roles;
 
-	public int getUserId() {
+	public Integer getUserId() {
 		return userId;
 	}
+	
 
-	public void setUserId(int userId) {
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	public User(Integer userId, String userName, Date createDate) {
+		super();
+		this.userId = userId;
+		this.userName = userName;
+		this.createDate = createDate;
+	}
+	
+	
+
+	public User(Integer userId, String userName, String password, Date createDate) {
+		super();
+		this.userId = userId;
+		this.userName = userName;
+		this.password = password;
+		this.createDate = createDate;
+	}
+
+
+	public User(Integer userId, String userName, String password, Date createDate, boolean rememberMe,
+			List<Role> roles) {
+		super();
+		this.userId = userId;
+		this.userName = userName;
+		this.password = password;
+		this.createDate = createDate;
+		this.rememberMe = rememberMe;
+		this.roles = roles;
+	}
+
+
+	public void setUserId(Integer userId) {
 		this.userId = userId;
 	}
 

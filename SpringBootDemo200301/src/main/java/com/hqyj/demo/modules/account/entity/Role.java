@@ -15,13 +15,43 @@ public class Role {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int roleId;
+	private Integer roleId;
 	private String roleName;
 
 	@Transient
 	private List<User> users;
 	@Transient
 	private List<Resource> resources;
+	
+	
+	
+	public Role() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	
+	
+	public Role(Integer roleId) {
+		super();
+		this.roleId = roleId;
+	}
+
+
+	public Role(String roleName) {
+		super();
+		this.roleName = roleName;
+	}
+
+
+
+	public Role(int roleId, String roleName) {
+		super();
+		this.roleId = roleId;
+		this.roleName = roleName;
+	}
+
+
 
 	public int getRoleId() {
 		return roleId;

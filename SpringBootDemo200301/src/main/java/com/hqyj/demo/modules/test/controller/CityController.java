@@ -96,7 +96,7 @@ public class CityController {
 	/**
 	 * 127.0.0.1/api/redis/cities/522
 	 */
-	@RequestMapping("/redis/cities/{countryId}")
+	@PostMapping("/redis/cities/{countryId}")
 	public Object migrateCitiesByCountryId(@PathVariable Integer countryId) {
 		
 		return cityService.migrateCitiesByCountryId(countryId);

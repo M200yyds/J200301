@@ -23,6 +23,26 @@ public class Resource {
 	@Transient
 	private List<Role> roles;
 
+	
+	public Resource() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Resource(int resourceId, String resourceUri, String resourceName, String permission) {
+		super();
+		this.resourceId = resourceId;
+		this.resourceUri = resourceUri;
+		this.resourceName = resourceName;
+		this.permission = permission;
+	}
+	
+	public Resource(int resourceId, String resourceName) {
+		super();
+		this.resourceId = resourceId;
+		this.resourceName = resourceName;
+	}
+
 	public int getResourceId() {
 		return resourceId;
 	}

@@ -8,30 +8,49 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		<META name="description" content="THORNBIRD.COM"/>
 
-		<!-- 引入css -->
-        <link th:href="@{http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css}" rel="stylesheet" >
-		<!-- <link th:href="${'/css/sbDemo.css'}" rel="stylesheet" /> -->
-
+		<!-- Bootstrap -->
+        <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+		
+		<!-- Font Awesome -->
+    	<link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+		
+		<!-- Custom Theme Style -->
+    	<link href="../build/css/custom.min.css" rel="stylesheet">
         <!-- 引入js -->
-	    <script th:src="@{http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js}"></script>  
-	    <script th:src="@{http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js}"></script>
-	    <!-- <script th:src="${'/js/sbDemo.js'}" type="text/javascript"></script> -->		
 	</head>
 
-	<body>
-		<div id="wrapper">
-			<!--header-->
+	<body class="nav-md">
+		<div class="container body">
+	      <div class="main_container">
+	        <div class="col-md-3 left_col">
+	        	<div th:replace="fragments/sideBar"></div>
+	        	<div th:replace="fragments/header"></div>
+	        	<!-- body content -->
+	        	<div th:replace="${template}"></div>
+	        	<div th:replace="fragments/footer"></div>
+	        </div>
+	       </div>
+	     </div>
+		<!-- <div id="wrapper">
+			header
 			<div th:replace="fragments/header :: header"></div>
 
-			<!-- body -->
+			body
 			<div class='mainBody' style="margin-top: 20px;">
 				<div th:if="${template}">
 					<div th:replace="${template}"></div>
 			    </div>
-			</div>
+			</div> -->
 
 			<!--footer-->
-			<div th:replace="fragments/footer :: footer"></div><!-- 引入footer页面中th:fragment为footer的部分 -->
+			<!-- <div th:replace="fragments/footer :: footer"></div>引入footer页面中th:fragment为footer的部分 -->
 		</div>
+		
+	<!-- jQuery -->
+    <script src="../vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	 <!-- Custom Theme Scripts -->
+    <script src="../build/js/custom.min.js"></script>
 	</body>
 </html> 
