@@ -132,8 +132,7 @@ public class TestController {
 		modelmap.addAttribute("changeType", "checkbox");
 		modelmap.addAttribute("baiduUrl", "/test/log");
 		modelmap.addAttribute("city", cities.get(0));
-		modelmap.addAttribute("shopLogo", 
-				"/VNCviewer/3333.png");
+		modelmap.addAttribute("shopLogo", "/VNCviewer/3333.png");
 		modelmap.addAttribute("country", country);
 		modelmap.addAttribute("cities", cities);
 		modelmap.addAttribute("updateCityUri", "/api/city");

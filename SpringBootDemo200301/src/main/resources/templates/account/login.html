@@ -25,11 +25,11 @@
                 <input id="passwordForLogin" type="password" name="password" class="form-control" placeholder="Password" required="" />
               </div>
               
-              <div>
+              <!-- <div>
 				<input class="form-control input-val" type="text" value="" placeholder="请输入验证码（不区分大小写）" 
 	                    style="float:left; width:68%; margin-bottom:0px;">
             	<canvas id="canvas" width="100" height="36"></canvas>
-			  </div>
+			  </div> -->
               <div style="text-align:left;margin-top:5px;margin-left:3px">
                 <input type="checkbox" lay-filter="filter" name="rememberMe" style="float: left;"
                   lay-skin="primary" title="30天内自动登录" >30天内自动登录
@@ -61,14 +61,14 @@
   </body>
 
   <script type="text/javascript">
-  var show_num = [];
+  //var show_num = [];
   $(function(){
 	  
-	draw(show_num);
+/* 	draw(show_num);
 	  
 	$("#canvas").on('click',function(){
 		draw(show_num);
-	});
+	}); */
 		
 	$("#loginButton").on("click",function(){
 		login();
@@ -77,15 +77,15 @@
 	 
 	function login(){
 		
-		var code = $(".input-val").val();
+		/* var code = $(".input-val").val();
 		var num = show_num.join("");
 		if (code == "") {
-			layer.msg("Please input Verification Code.", {icon: 0});
+			location.href="/common/dashboard";
 			return;
 		} else if (code != num) {
 			layer.msg("The input code is error", {icon: 0});
 			return;
-		}
+		} */
 		
 		var user={};
 		user.userName= $("[name='userName']").val();
@@ -98,7 +98,7 @@
 			data : JSON.stringify(user),
 			success :function(data){
 				if(data.status == 200){
-					layer.msg(data.message, {icon: 0});
+					location.href="/common/dashboard"
 				}else{
 					layer.msg(data.message, {icon: 0});
 				}
@@ -109,7 +109,7 @@
 		});
 	} 
 	
-	//动态验证码
+	/* //动态验证码
 	function draw(show_num) {
 		var canvas_width=$('#canvas').width();
 		var canvas_height=$('#canvas').height();
@@ -162,7 +162,7 @@
 		var g = Math.floor(Math.random() * 256);
 		var b = Math.floor(Math.random() * 256);
 		return "rgb(" + r + "," + g + "," + b + ")";
-	}
+	} */
 	
   </script>
 </html>
