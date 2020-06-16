@@ -45,7 +45,7 @@ public class Role {
 
 
 
-	public Role(int roleId, String roleName) {
+	public Role(Integer roleId, String roleName) {
 		super();
 		this.roleId = roleId;
 		this.roleName = roleName;
@@ -53,11 +53,11 @@ public class Role {
 
 
 
-	public int getRoleId() {
+	public Integer getRoleId() {
 		return roleId;
 	}
 
-	public void setRoleId(int roleId) {
+	public void setRoleId(Integer roleId) {
 		this.roleId = roleId;
 	}
 
