@@ -22,11 +22,23 @@ public class User {
 	private String password;
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
 	private Date createDate;
-
+	
 	@Transient
 	private boolean rememberMe;
 	@Transient
 	private List<Role> roles;
+	
+	private String userImg;
+	
+	public String getUserImg() {
+		return userImg;
+	}
+
+
+	public void setUserImg(String userImg) {
+		this.userImg = userImg;
+	}
+
 
 	public Integer getUserId() {
 		return userId;
@@ -46,6 +58,14 @@ public class User {
 	}
 	
 	
+
+	public User(Integer userId, String userName, String userImg) {
+		super();
+		this.userId = userId;
+		this.userName = userName;
+		this.userImg = userImg;
+	}
+
 
 	public User(Integer userId, String userName, String password, Date createDate) {
 		super();
