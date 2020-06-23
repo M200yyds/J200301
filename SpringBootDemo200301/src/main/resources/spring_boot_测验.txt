@@ -1,0 +1,117 @@
+一、选择题（共12小题，每小题2.5分，共30分）
+	以下不是spring boot优点的是 (D)
+		A．快速搭建项目
+		B．简化配置  
+		C．自动配置  
+		D．无需容器
+	Spring Boot配置，以下哪个优先级最高（A）
+		A、外置：xx.jar同目录下/config/application.properties；
+		B、外置：xx.jar同目录下/config/application.yml；
+		C、内置：src/main/resources/config；
+		D、内置：src/main/resources
+	以下log日志级别哪个最高（D）
+		A、DEBUG
+		B、INFO
+		C、WARN
+		D、ERROR
+	以下不是spring boot的核心注解的是 ()
+		A.	@SpringBootConfiguration
+		B.	@EnableAutoConfiguration
+		C.	@ComponentScan
+		D.	@MapperScan
+	要使用springMVC的功能，以下哪个架包是必须加的 (C)
+		A．spring-boot-starter-jdbc  
+		B．spring-boot-starter-thymeleaf  
+		C．spring-boot-starter-web  
+		D．mybatis-spring-boot-starter
+	以下哪个注解不能加在类上 (B)
+		A.	@Controller
+		B.	@ResponseBody
+		C.	@RestController
+		D.	@RequestMapping
+	当控制层上有@RestController注解时，方法中返回一个字符串“<h1>Hello</h1>” 的结果是 (C)
+		A. 一级标题显示的Hello
+		B.	找不到Hello.html
+		C.	<h1>Hello</>
+		D.	Hello
+	SpringBoot项目中配置文件的格式 (C)
+		A．properties  
+		B．yml  
+		C．两者都可以
+	前台使用json参数格式，控制器consumer、参数使用的注解是（A）
+		A、application/josn ---- @RequestBody
+		B、application/josn ---- @ModelAttribute
+		C、application/x-www-form-urlencoded ---- @RequestBody
+		D、application/x-www-form-urlencoded ---- @ModelAttribute
+	@Pointcut("execution(public * com.thornBird.sbd.modules.*.controller.*.*(..))")，第三个*代表（C）
+		A、代表返回类型不限
+		B、代表module下所有子包
+		C、代表所有类
+		D、代表所有方法
+	Url匹配风格中/admin*，以下哪个匹配不正确（D）
+		A、/admin
+		B、/admin1
+		C、/admin123
+		D、/admin/1
+	Mybatis框架中，插入数据使用那个注解（B）
+		A、@Update
+		B、@Insert
+		C、@Select
+		D、@InsertMapping
+二、填空题（共5小题，每小题5分，共25分）
+	Java配置依赖的2个注解是_____@Bean_____，____@Configuration_______；
+	修改tomcat端口号为9090应该怎么写？____ser________；
+	自定义拦截器需要实现__HandlerInterceptor______接口；
+	过滤器需要使用___@WebFilter______注解；
+	上传文件，使用___file_接收文件对象，consumer使用_multipart/form-data____；
+三、问答题（每题5分）
+	简述Spring
+	包含了两大核心思想
+	1.AOP：Aspect Oriented Programming，面向切面编程，其思想是在执行某些代码前执行另外的代码，使程序更灵活、扩展性更好，可以随便地添加、删除某些功能。
+	2.IOC：Inversion of Control ,控制反转,在Spring框架中我们通过配置创建类对象，由Spring在运行阶段实例化、组装对象
+	
+	简述Git使用流程，写几个常用Git命令；
+	1、将远程代码仓库 clone 到本地；
+	2、在代码仓库创建代码；
+	3、add 将新增代码 添加到 提交序列
+	4、commit 将提交序列 commit 到本地仓库
+	5、push 将本地仓库 push 到远程；
+	git clone https://github.com/hymanHu/200301.git --- 将远程代码仓库 clone 到本地；
+	git checkout -b dev -t origin/master    --- 从 master 分支创建 dev 分支
+
+	简述敏捷开发、Scrum流程；
+	
+
+
+	简述shiro两大功能实现流程；
+	身份验证：
+		用户在登录页面输入用户名、密码
+		usercontroller --- login
+		userserviceimpl --- login
+		获取 subject 组件
+		包装我们令牌（用户名、密码、记住我）
+		调用 subject.login
+		myreal --- 身份验证方法 ---- 获取用户名查询user ---- 包装身份验证器 ---- 用身份验证器和令牌比对 ---- 比对成功继续执行，比对失败抛出异常
+	资源授权
+		用户在登录页面输入用户名、密码
+		usercontroller --- login
+		userserviceimpl --- login
+			获取 subject 组件
+			subject.checkRoles ---- 调用 realm 里资源授权的方法，包装了资源验证器
+		访问相应的页面或控制器 ---- 资源验证器 与 页面标签 或者 控制器注解进行对比
+			subject.checkRoles
+		页面上添加相应的标签
+		控制器上添加相应的注解
+		访问相应的页面或控制器 ---- 如果有shiro 标签 或者shiro注解 ---- 调用 realm 里资源授权的方法，包装了资源验证器 ---- 资源验证器 与 页面标签 或者 控制器注解进行对比
+	
+四、编程题（共2小题，1题12分，2题13分，共25分）
+	访问控制层，将一个List装入requset中，再在页面上以表格的形式显示出来
+	请写出重定向到某个页面的代码
+	
+	@PutMapping(value="/cities",consumes = "application/x-www-form-urlencoded")
+	public List<City> selectById(@ModelAttribute City city){
+		Integer countryId=100;
+		modelmap.addAttribute("cities", cities);
+		List<City> cities = cityService.selectById(countryId);
+		return "redirect :  /test/index"
+	}
